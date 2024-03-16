@@ -7,26 +7,16 @@ import com.example.GoCloud.Dao.UserDao;
 import com.example.GoCloud.DataHolder.Client;
 import com.example.GoCloud.DataHolder.User;
 
-import jakarta.xml.bind.annotation.XmlRootElement;
-
 import java.util.List;
 import java.util.Map;
 
-import org.apache.logging.log4j.util.StringBuilderFormattable;
-import org.hibernate.type.descriptor.java.UUIDJavaType.ToStringTransformer;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.style.ToStringCreator;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.ResponseEntity;
 
 
@@ -111,7 +101,8 @@ public class MyController {
 	    
 	 //To handle the use requests
 	 // Endpoint to handle get requests
-	    @GetMapping("/read")
+	    @SuppressWarnings("deprecation")
+		@GetMapping("/read")
 	    public List<Map<String, Object>> executeQuery(
 	    		 @RequestParam("SHA") String SHA,
 	    	     @RequestParam("quary") String quary,
